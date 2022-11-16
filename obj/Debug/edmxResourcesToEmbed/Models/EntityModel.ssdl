@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AngularTestDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="50" />
+    <Property Name="CheckIn" Type="nvarchar" MaxLength="100" />
+    <Property Name="Age" Type="int" />
+  </EntityType>
+  <EntityType Name="PatientHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Height" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Weight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="BMI" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Smoking" Type="nvarchar" MaxLength="100" />
+    <Property Name="Alcohol" Type="nvarchar" MaxLength="100" />
+    <Property Name="DrugUsage" Type="nvarchar" MaxLength="100" />
+    <Property Name="Surgeries" Type="nvarchar" MaxLength="100" />
+    <Property Name="PatientHistoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="AngularTestDbModelStoreContainer">
+    <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientHistory" EntityType="Self.PatientHistory" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

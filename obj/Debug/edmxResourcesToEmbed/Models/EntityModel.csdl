@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AngularTestDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CheckIn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="AngularTestDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Patients" EntityType="Self.Patient" />
+    <EntitySet Name="PatientHistories" EntityType="AngularTestDbModel.PatientHistory" />
+  </EntityContainer>
+  <EntityType Name="PatientHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Height" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Weight" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="BMI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Smoking" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Alcohol" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DrugUsage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Surgeries" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PatientHistoryId" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>
